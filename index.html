@@ -14,10 +14,10 @@
 					<div class="card shadow">
 						<div class="card-body">
 							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
 						</div>
 					</div>
@@ -26,10 +26,10 @@
 					<div class="card shadow">
 						<div class="card-body">
 							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
 						</div>
 					</div>
@@ -38,22 +38,70 @@
 					<div class="card shadow">
 						<div class="card-body">
 							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h6 class="modal-title">Sesi login sudah habis. silahkan login kembali.</h6>
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col">
+								<form>
+									<div class="form-group">
+										<label>Username</label>
+										<input type="text" name="username" class="form-control">
+									</div>
+									<div class="form-group">
+										<label>Password</label>
+										<input type="password" name="password" class="form-control">
+									</div>
+			
+										<button type="button" class="btn btn-primary">Login</button>
 
-
-
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						
+					</div>
+				</div>
+			</div>
+		</div>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			var idleMax = 1;
+			var idleTime = 0;
+			$(document).ready(function()
+			{
+				var idleInterval = setInterval('timerIncrement()', 5000);
+				$(this).mousemove(function (e) {idleTime = 0;});
+				$(this).keypress(function (e) {idleTime = 0;});
+			})
+			function timerIncrement()
+			{
+				idleTime = idleTime + 1;
+				if(idleTime > idleMax )
+				{
+					$('#modalLogin').modal('show');
+				}
+			}
+		</script>
 	</body>
 </body>
 </html>
